@@ -30,9 +30,9 @@ async def cmd_webcam(message: Message):
                 cap.release()
                 os.remove(path)
             else:
-                await message.answer(f'No camera detected')
+                await message.answer('No camera detected')
         elif len(args) == 2:
-            path = path + 'cam.avi'
+            path = f'{path}cam.avi'
             cap = cv2.VideoCapture(0)
             if cap.isOpened():
                 codec = cv2.VideoWriter_fourcc(*'XVID')
